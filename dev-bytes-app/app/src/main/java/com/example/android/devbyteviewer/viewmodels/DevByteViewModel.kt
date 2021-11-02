@@ -24,14 +24,6 @@ import java.io.IOException
 class DevByteViewModel(application: Application) : AndroidViewModel(application) {
 
     /**
-     *
-     */
-
-    /**
-     *
-     */
-
-    /**
      * A playlist of videos that can be shown on the screen. This is private to avoid exposing a
      * way to set this value to observers.
      */

@@ -34,8 +34,6 @@ class DevByteFragment : Fragment() {
         val activity = requireNotNull(this.activity) {
             "You can only access the viewModel after onViewCreated()"
         }
-        //The ViewModelProviders (plural) is deprecated.  
-        //ViewModelProviders.of(this, DevByteViewModel.Factory(activity.application)).get(DevByteViewModel::class.java)
         ViewModelProvider(this, DevByteViewModel.Factory(activity.application)).get(DevByteViewModel::class.java)
                 
     }
@@ -84,7 +82,7 @@ class DevByteFragment : Fragment() {
                 container,
                 false)
         // Set the lifecycleOwner so DataBinding can observe LiveData
-        binding.setLifecycleOwner(viewLifecycleOwner)
+        binding.lifecycleOwner = viewLifecycleOwner
 
         binding.viewModel = viewModel
 
